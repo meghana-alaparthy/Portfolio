@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Work+Sans:300,600|Lato:300,400,700');
+
+/* Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Basic */
+body {
+    background: #fff;
+    color: #444;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16pt;
+    font-weight: 300;
+    line-height: 1.75em;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin: 0 0 1em 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+p {
+    margin: 0 0 2em 0;
+}
+
+a {
+    color: #49be99;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #5ecba6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Layout */
+#header {
+    background: #4acaa8;
+    color: rgba(255, 255, 255, 0.6);
+    height: 100%;
+    position: fixed;
+    right: 0;
+    text-align: right;
+    top: 0;
+    width: 18vw;
+    z-index: 10000;
+    padding: 3em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+#header header {
+    flex-shrink: 0;
+}
+
+
+
+#header h1 {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+}
+
+#header>header>p {
+    color: rgba(210, 242, 233, 1);
+    font-style: italic;
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+#header nav ul {
+    list-style: none;
+    margin: 1em 0;
+    text-align: right;
+}
+
+#header nav ul li {
+    padding: 0.5em 0;
+}
+
+#header nav ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    border: 0;
+    font-weight: 400;
+    font-size: 1.1em;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+#header nav ul li a:hover,
+#header nav ul li a.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    /* Subtle highlight for active state */
+    padding-right: 1em;
+    /* Indent on active slightly */
+}
+
+#header footer .icons {
+    list-style: none;
+    padding: 0;
+}
+
+#header footer .icons li {
+    display: inline-block;
+    padding: 0 0.5em;
+}
+
+#header footer .icons a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+#header footer .icons a:hover {
+    color: #fff;
+}
+
+/* Main Content */
+#wrapper {
+    padding-right: 26vw;
+}
+
+#main>section {
+    border-top: solid 2px #efefef;
+    padding: 4em 0;
+}
+
+#main>section:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.container {
+    max-width: 65em;
+    margin: 0 auto;
+    padding: 3em;
+}
+
+/* Home Section Specifics */
+#about header.major {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#about h2 {
+    color: #4acaa8;
+    font-size: 3.2em;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+#about .social-bar {
+    background-color: #4acaa8;
+    padding: 1em;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Optional, not in original but looks nice */
+}
+
+#about .social-bar a {
+    color: #fff;
+    font-size: 2em;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+#about>.container>p {
+    font-family: 'Lato', sans-serif;
+    /* Fallback if not loaded */
+    font-size: 1.1em;
+    color: #888;
+    line-height: 1.8em;
+    margin-top: 2em;
+}
+
+.image.main {
+    display: flex;
+    justify-content: center;
+    padding-top: 3em;
+    background: transparent;
+    /* Removed banner background implication if any */
+}
+
+.image.main img.profile-circle {
+    width: 15em;
+    /* Adjust size as needed */
+    height: 15em;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 5px solid #4acaa8;
+    /* Optional: adds a nice border matching theme */
+}
+
+/* Skills Icons */
+ul.feature-icons {
+    list-style: none;
+    padding: 0;
+}
+
+ul.feature-icons li {
+    display: inline-block;
+    width: 45%;
+    margin-bottom: 1em;
+    padding-left: 2.5em;
+    position: relative;
+}
+
+ul.feature-icons li:before {
+    background: #49be99;
+    border-radius: 100%;
+    color: #ffffff;
+    content: '';
+    display: block;
+    height: 2em;
+    left: 0;
+    line-height: 2em;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 2em;
+}
+
+ul.feature-icons li .icon::before {
+    /* FontAwesome customization handled by classes but we need to center it */
+    position: relative;
+    z-index: 1;
+}
+
+/* Timeline/Education/Projects */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.features article {
+    width: 45%;
+    margin-bottom: 2em;
+}
+
+.features article .image img {
+    border-radius: 0.5em;
+    width: 100%;
+}
+
+/* Forms */
+form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+form .col-6 {
+    width: calc(50% - 0.75em);
+}
+
+form .col-12 {
+    width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    appearance: none;
+    background: #f4f4f4;
+    border: none;
+    border-radius: 0.5em;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0.75em;
+    text-decoration: none;
+    width: 100%;
+}
+
+ul.actions {
+    list-style: none;
+    padding: 0;
+}
+
+ul.actions li {
+    display: inline-block;
+    padding: 0 1em 0 0;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    appearance: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 0.5em;
+    border: solid 2px #efefef;
+    color: #444;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    height: 3em;
+    line-height: 2.8em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+input[type="submit"].primary {
+    background-color: #49be99;
+    border-color: #49be99;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    #header {
+        width: 30vw;
+    }
+
+    #wrapper {
+        padding-right: 30vw;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #header {
+        position: relative;
+        width: 100%;
+        right: auto;
+        top: auto;
+        height: auto;
+        text-align: center;
+        padding: 4em 2em;
+    }
+
+    #header .avatar img {
+        margin: 0 auto 1em auto;
+    }
+
+    #header nav ul {
+        text-align: center;
+    }
+
+    #wrapper {
+        padding-right: 0;
+    }
+
+    ul.feature-icons li,
+    .features article {
+        width: 100%;
+    }
+
+    form .col-6 {
+        width: 100%;
+    }
+}
+
+#header footer .icons .label {
+    display: none;
+}
