@@ -140,8 +140,14 @@ p {
     margin: 0 0 2em 0;
 }
 
+strong,
+b {
+    color: #777;
+    font-weight: 700;
+}
+
 a {
-    color: #49be99;
+    color: #1e293b;
     text-decoration: underline;
     transition: color 0.2s ease-in-out;
 }
@@ -157,8 +163,8 @@ img {
 
 /* Layout */
 #header {
-    background: #4acaa8;
-    color: rgba(255, 255, 255, 0.6);
+    background: #1e293b;
+    color: rgba(255, 255, 255, 0.7);
     height: 100%;
     position: fixed;
     right: 0;
@@ -187,7 +193,7 @@ img {
 }
 
 #header>header>p {
-    color: rgba(210, 242, 233, 1);
+    color: rgba(255, 255, 255, 0.8);
     font-style: italic;
     font-size: 0.9em;
     line-height: 1.5em;
@@ -270,28 +276,40 @@ img {
 }
 
 #about h2 {
-    color: #4acaa8;
+    color: #1e293b;
     font-size: 3.2em;
     font-weight: 400;
     margin-bottom: 0.5em;
 }
 
 #about .social-bar {
-    background-color: #4acaa8;
-    padding: 1em;
-    display: inline-block;
+    background-color: #1e293b;
+    padding: 1.2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
     width: 100%;
-    text-align: center;
     border-radius: 4px;
     box-sizing: border-box;
-    /* Optional, not in original but looks nice */
 }
 
 #about .social-bar a {
     color: #fff;
-    font-size: 2em;
-    margin: 0 1em;
+    font-size: 1em;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    transition: opacity 0.2s;
+}
+
+#about .social-bar a:hover {
+    opacity: 0.85;
+}
+
+#about .social-bar a i {
+    font-size: 1.4em;
 }
 
 #about>.container>p {
@@ -318,60 +336,141 @@ img {
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    border: 5px solid #4acaa8;
+    border: 5px solid #1e293b;
     /* Optional: adds a nice border matching theme */
 }
 
-/* Skills Icons */
 ul.feature-icons {
     list-style: none;
     padding: 0;
 }
 
 ul.feature-icons li {
-    display: inline-block;
-    width: 45%;
-    margin-bottom: 1em;
+    width: 100%;
+    margin-bottom: 2em;
     padding-left: 2.5em;
     position: relative;
+    vertical-align: top;
+}
+
+ul.feature-icons li b {
+    display: inline-block;
+    font-size: 1.05em;
+    letter-spacing: 0.5px;
 }
 
 ul.feature-icons li:before {
-    background: #49be99;
+    background: #1e293b;
     border-radius: 100%;
-    color: #ffffff;
     content: '';
     display: block;
     height: 2em;
     left: 0;
     line-height: 2em;
     position: absolute;
-    text-align: center;
     top: 0;
     width: 2em;
 }
 
-ul.feature-icons li .icon::before {
-    /* FontAwesome customization handled by classes but we need to center it */
-    position: relative;
+ul.feature-icons li>i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    color: #ffffff;
     z-index: 1;
+    font-size: 0.9em;
 }
 
 /* Timeline/Education/Projects */
 .features {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 4em;
 }
 
 .features article {
-    width: 45%;
+    width: 44%;
     margin-bottom: 2em;
 }
 
 .features article .image img {
     border-radius: 0.5em;
     width: 100%;
+}
+
+/* Project Pagination */
+.project-pagination {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.project-pagination button {
+    background: #1e293b;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1.2em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background 0.2s;
+}
+
+.project-pagination button:hover:not(:disabled) {
+    background: #334155;
+}
+
+.project-pagination button:disabled {
+    background: #ccc;
+    cursor: default;
+}
+
+.project-pagination #pageIndicator {
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Professional Experience */
+.experience-entry {
+    margin-bottom: 2.5em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #eee;
+}
+
+.experience-entry:last-child {
+    border-bottom: none;
+}
+
+.experience-entry h4 {
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0 0 0.2em 0;
+}
+
+.experience-entry h5 {
+    color: #1e293b;
+    font-size: 0.95em;
+    font-weight: 600;
+    margin: 0 0 0.75em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.experience-entry ul {
+    margin: 0;
+    padding-left: 1.5em;
+}
+
+.experience-entry ul li {
+    margin-bottom: 0.4em;
+    line-height: 1.6em;
+    color: #555;
 }
 
 /* Forms */
@@ -415,7 +514,8 @@ ul.actions li {
 }
 
 input[type="submit"],
-input[type="reset"] {
+input[type="reset"],
+.button {
     appearance: none;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     background-color: transparent;
@@ -433,10 +533,15 @@ input[type="reset"] {
     white-space: nowrap;
 }
 
-input[type="submit"].primary {
-    background-color: #49be99;
-    border-color: #49be99;
+input[type="submit"].primary,
+.button.primary {
+    background-color: #1e293b;
+    border-color: #1e293b !important;
     color: #ffffff;
+}
+
+.button:hover {
+    background-color: #334155 !important;
 }
 
 /* Responsive */
@@ -471,6 +576,10 @@ input[type="submit"].primary {
 
     #wrapper {
         padding-right: 0;
+    }
+
+    ul.feature-icons {
+        margin-bottom: 0;
     }
 
     ul.feature-icons li,
